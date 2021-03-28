@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:RIANTI_UI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="RIANTI_UI.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        FontSize="20"
+        FontWeight="Bold"
+        Background="Black"
+        Foreground="LightBlue"
+        Title="R.I.A.N.T.I">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  <DockPanel Margin="10,10,10,10">
+    <DockPanel.Styles>
+      <Style Selector="Button">
+        <Setter Property="Background" Value="LightBlue"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+      </Style>
+      <Style Selector="Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="DarkBlue"/>
+      </Style>
+    </DockPanel.Styles>
+    <StackPanel Orientation="Horizontal" Height="50" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="10,10,10,10">
+      <TextBlock Text="{Binding Welcome}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <TextBox Text="{Binding txtInput, Mode=TwoWay}" Width="200" Margin="10,5,10,5"></TextBox>
+      <Button FontSize="20" Content="Say" Width="75" Command="{Binding SayClick}" Margin="0,0,10,0"></Button>
+      <Button FontSize="20" Content="Query" Width="75" Command="{Binding QueryClick}"></Button>
+    </StackPanel>
+    <StackPanel DockPanel.Dock="Top" Margin="10,10,10,10">
+      <Button FontSize="20" Content="{Binding txtInitButton}" Width="100" Command="{Binding InitClick}"></Button>
+    </StackPanel>
+    <StackPanel DockPanel.Dock="Top" Margin="10,10,10,10">
+      <TextBlock Text="{Binding txtWeather}"/>
+    </StackPanel>
+    <StackPanel Height="50" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" DockPanel.Dock="Bottom" Margin="10,10,10,10">
+      <Button FontSize="20" Content="Exit" Width="75" Command="{Binding ExitClick}"/>
+    </StackPanel>
+  </DockPanel>
+
+</Window>
