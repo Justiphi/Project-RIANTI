@@ -23,7 +23,7 @@ namespace EDITH_Core
             //var keyword = "Tiina";
             //var keyword = "Jarvis";
             //var keyword = "Peter";
-            //var keyword = "Friday";
+           //var keyword = "Friday";
             //var keyword = "Ria";
             var keyword = "Rianti";
 

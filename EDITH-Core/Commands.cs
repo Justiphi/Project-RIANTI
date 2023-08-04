@@ -20,12 +20,12 @@ namespace EDITH_Core
 
             if (outputString == "")
             {
-                switch (command)
+                switch (command.ToLower())
                 {
-                    case "Time":
+                    case "time":
                         outputString = GetTime();
                         break;
-                    case "Date":
+                    case "date":
                         outputString = GetDate();
                         break;
                 }
